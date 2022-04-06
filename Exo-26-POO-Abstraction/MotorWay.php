@@ -13,10 +13,9 @@ final class MotorWay extends HighWay
 
     public function addVehicle(Vehicle $vehicle)
     {
-        if ($vehicle instanceof Vehicle) {
-            return 'circulation autorisé pour ' . $this;
-        } else {
-            return 'circulation interdite';
+        if (!$vehicle instanceof Bike || !$vehicle instanceof Skateboard) {
+
+            $this->addVehicle($vehicle);
         }
     }
 }
