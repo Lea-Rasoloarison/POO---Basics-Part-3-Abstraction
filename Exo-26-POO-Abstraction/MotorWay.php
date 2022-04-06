@@ -11,7 +11,7 @@ final class MotorWay extends HighWay
     protected int $lane = 4;
 
 
-    public function addVehicle(Vehicle $vehicle): string
+    public function addVehicle(Vehicle $vehicle)
     {
         if ($vehicle instanceof Vehicle) {
             return 'circulation autorisé pour ' . $this;

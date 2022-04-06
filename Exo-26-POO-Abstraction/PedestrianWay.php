@@ -11,12 +11,12 @@ final class PedestrianWay extends HighWay
     protected int $lane = 1;
 
 
-    public function addVehicle(Vehicle $vehicle): string
+    public function addVehicle(Vehicle $vehicle)
     {
-        if ($vehicle instanceof Vehicle) {
-            return 'circulation autorisé pour ' . $this;
+        if ($vehicle instanceof Bicycle || $vehicle = 'Skateboard') {
+            return 'circulation interdit pour ' . $this;
         } else {
-            return 'circulation interdite';
+            return 'circulation autorisé';
         }
     }
 }

@@ -4,50 +4,62 @@ require_once 'vehicle.php';
 
 abstract class HighWay{
 
+    private array $currentVehicles;
+    private int $nbLane;
+    private int $maxSpeed;
+
     abstract public function addVehicle(Vehicle $vehicle);
+    /**
+     * @return array
+     */
+    public function getCurrentVehicles()
+    {
+        return $this->currentVehicles;
+    }
 
-// Définition du véhicule
-
-    public function getcurrentVehicles(): string
-{
-    return $this->currentVehicles;
-}
-
-    public function setcurrentVehicles(string $currentVehicles): string
-{
-    $this->currentVehicles = $currentVehicles;
-}
-
-// Définition du nombre de voies
-
-    public function getLane(): int
-{
-    return $this->lane;
-}
-
-    public function setlane(int $lane): int
-{
-    $this->lane = $lane;
-}
+    /**
+     * @param array $currentVehicles
+     */
+    public function setCurrentVehicles($currentVehicles)
+    {
+        $this->currentVehicles = $currentVehicles;
+    }
 
 // Définition du nombre de voies
 
-    public function getmaxSpeed(): int
+    /**
+     * @return int
+     */
+    public function getNbLane()
+    {
+        return $this->nbLane;
+    }
+
+    /**
+     * @param int $nbLane
+     */
+    public function setNbLane($nbLane)
+    {
+        $this->nbLane = $nbLane;
+    }
+
+
+// Définition de la vitesse maximale
+
+    /**
+     * @return int
+     */
+    public function getMaxSpeed()
     {
         return $this->maxSpeed;
     }
 
-    public function setmaxSpeed(int $maxSpeed): void
+    /**
+     * @param int $maxSpeed
+     */
+    public function setMaxSpeed($maxSpeed)
     {
         $this->maxSpeed = $maxSpeed;
     }
-
-
-    public function __construct(int $lane, int $maxSpeed)
-    {
-        $this->lane = $lane;
-        $this->maxSpeed = $maxSpeed;
-    }
-
 
 }
